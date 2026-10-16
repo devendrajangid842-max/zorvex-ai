@@ -227,6 +227,60 @@ footer {
     font-size: 50px;
   }
 }
+  /* ZORVEX AI INTRO ANIMATION */
+#zorvex-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: zorvexHide 1s ease 3s forwards;
+}
+
+.zorvex-logo {
+  font-size: 90px;
+  font-weight: 900;
+  color: #ff003c;
+  text-shadow: 0 0 20px #ff003c, 0 0 60px #ff003c;
+  animation: zorvexPulse 1s ease-in-out infinite alternate;
+}
+
+.zorvex-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-top: 10px;
+  animation: zorvexText 1s ease both;
+}
+
+.zorvex-tagline {
+  color: #ff335c;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 12px;
+}
+
+@keyframes zorvexPulse {
+  from { transform: scale(.85); opacity: .6; }
+  to { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes zorvexText {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zorvexHide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
 </style>
 </head>
 
