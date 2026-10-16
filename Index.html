@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>ZORVEX AI - Create Without Limits</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #090909;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  color: #ff2525;
+  letter-spacing: 1px;
+}
+
+.badge {
+  color: #ff3333;
+  font-size: 11px;
+  border: 1px solid #ff3333;
+  padding: 5px 8px;
+  border-radius: 15px;
+}
+
+.hero {
+  padding: 42px 20px 25px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #ff2929;
+}
+
+.hero p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 15px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin: 25px 0 15px;
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tool {
+  background: linear-gradient(145deg, #1b1b1b, #101010);
+  border: 1px solid #303030;
+  border-radius: 15px;
+  padding: 18px 12px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.tool:hover, .tool.active {
+  border-color: #ff2929;
+  background: #241111;
+}
+
+.icon {
+  font-size: 27px;
+  margin-bottom: 12px;
+}
+
+.tool h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.tool p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.panel {
+  margin-top: 25px;
+  background: #141414;
+  border: 1px solid #303030;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.panel h2 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  margin: 18px 0 9px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+textarea, select, input[type="text"] {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #363636;
+  background: #090909;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+textarea:focus, select:focus {
+  border-color: #ff2929;
+}
+
+input[type="file"] {
+  width: 100%;
+  color: #bbb;
+  font-size: 12px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.generate {
+  margin-top: 22px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e51616, #ff4545);
+  color: white;
+  font-size: 16px;
+}
+
+.generate:active {
+  transform: scale(.98);
+}
+
+#message {
+  margin-top: 15px;
+  color: #ff7777;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.feature {
+  background: #151515;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #292929;
+}
+
+.feature strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.feature p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 30px;
+  color: #777;
+  font-size: 12px;
+  border-top: 1px solid #252525;
+}
+
+@media(min-width:600px) {
+  .tools {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚡ ZORVEX AI</div>
+  <div class="badge">AI STUDIO</div>
+</header>
+
+<section class="hero">
+  <h1>Create Beyond<br><span>Imagination.</span></h1>
+  <p>
+    Your personal AI creative studio.<br>
+    Turn your ideas into movies, music, images and more.
+  </p>
+</section>
+
+<main class="container">
+
+  <h2 class="section-title">🔥 Explore AI Tools</h2>
+
+  <div class="tools">
+
+    <div class="tool active" onclick="chooseTool('movie',this)">
+      <div class="icon">🎬</div>
+      <h3>AI Movie Maker</h3>
+      <p>Turn your story into a movie.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('video',this)">
+      <div class="icon">🎞️</div>
+      <h3>Text to Video</h3>
+      <p>Create video from a prompt.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('photo',this)">
+      <div class="icon">📸</div>
+      <h3>Photo to Video</h3>
+      <p>Bring your photos to life.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('song',this)">
+      <div class="icon">🎵</div>
+      <h3>AI Song Maker</h3>
+      <p>Create songs with AI vocals.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('singer',this)">
+      <div class="icon">🎤</div>
+      <h3>AI Singer</h3>
+      <p>Turn lyrics into singing.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('image',this)">
+      <div class="icon">🖼️</div>
+      <h3>AI Image Maker</h3>
+      <p>Imagine it. Create it.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('voice',this)">
+      <div class="icon">🗣️</div>
+      <h3>AI Voice Studio</h3>
+      <p>Voiceovers for your projects.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('story',this)">
+      <div class="icon">✍️</div>
+      <h3>AI Story Writer</h3>
+      <p>Create stories and scripts.</p>
+    </div>
+
+    <div class="tool" onclick="chooseTool('edit',this)">
+      <div class="icon">✂️</div>
+      <h3>AI Video Editor</h3>
+      <p>Plan and organize your clips.</p>
+    </div>
+
+  </div>
+
+  <section class="panel">
+    <h2 id="formTitle">🎬 AI Movie Maker</h2>
+    <p style="color:#999;font-size:13px;line-height:1.6">
+      Describe your idea and customize your creation.
+    </p>
+
+    <label class="label" for="prompt">Your Idea or Story</label>
+    <textarea id="prompt"
+      placeholder="Write your story or describe what you want to create..."></textarea>
+
+    <div id="uploadArea" style="display:none">
+      <label class="label" for="photoFile">Upload Your Photo</label>
+      <input type="file" id="photoFile" accept="image/*">
+      <img id="preview" alt="Image preview"
+        style="display:none;max-width:100%;max-height:250px;margin-top:15px;border-radius:12px">
+    </div>
+
+    <label class="label" for="language">Language</label>
+    <select id="language">
+      <option>Hindi</option>
+      <option>English</option>
+      <option>Hinglish</option>
+      <option>Other</option>
+    </select>
+
+    <label class="label" for="style">Creative Style</label>
+    <select id="style">
+      <option>Cinematic</option>
+      <option>Realistic</option>
+      <option>Anime</option>
+      <option>Cartoon</option>
+      <option>Horror</option>
+      <option>Action</option>
+      <option>Romantic</option>
+    </select>
+
+    <label class="label" for="duration">Duration</label>
+    <select id="duration">
+      <option value="30">30 seconds</option>
+      <option value="60">1 minute</option>
+      <option value="300" selected>5 minutes</option>
+      <option value="600">10 minutes</option>
+      <option value="3600">1 hour</option>
+    </select>
+
+    <button class="generate" onclick="generate()">
+      ✨ Generate with AI
+    </button>
+
+    <div id="message" role="status"></div>
+  </section>
+
+  <h2 class="section-title">✨ Why ZORVEX AI?</h2>
+
+  <div class="features">
+    <div class="feature">
+      <strong>🎬 Creative Studio</strong>
+      <p>Explore tools for stories, videos and music.</p>
+    </div>
+
+    <div class="feature">
+      <strong>📱 Mobile Friendly</strong>
+      <p>Designed for phones, tablets and computers.</p>
+    </div>
+
+    <div class="feature">
+      <strong>🎨 Your Creativity</strong>
+      <p>Build your ideas into creative projects.</p>
+    </div>
+
+    <div class="feature">
+      <strong>⬇️ Easy Downloads</strong>
+      <p>Download your creations when supported.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div style="color:#ff3030;font-weight:bold;font-size:17px;margin-bottom:8px">
+    ⚡ ZORVEX AI
+  </div>
+  Your Imagination. AI Creation.<br><br>
+  © 2026 ZORVEX AI. All rights reserved.
+</footer>
+
+<script>
+let currentTool = "movie";
+
+const toolInfo = {
+  movie: ["🎬 AI Movie Maker", "Write your movie story here..."],
+  video: ["🎞️ Text to Video", "Describe the video you want..."],
+  photo: ["📸 Photo to Video", "Describe how you want your photo animated..."],
+  song: ["🎵 AI Song Maker", "Describe the song, mood
